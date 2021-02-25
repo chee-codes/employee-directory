@@ -4,7 +4,7 @@ import TableBody from "./TableBody";
 const Table = (props) => {
   return (
     <div className="container-fluid">
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
