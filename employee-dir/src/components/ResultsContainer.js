@@ -12,7 +12,10 @@ class ResultsContainer extends Component {
 
   componentDidMount() {
     API.search()
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        this.setState({ employees: res.data.results });
+      })
       .catch((err) => console.log(err));
   }
 
@@ -20,7 +23,7 @@ class ResultsContainer extends Component {
     return (
       <>
         <Form />
-        <Table />
+        <Table employees={this.state.employees} />
       </>
     );
   }

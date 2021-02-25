@@ -1,7 +1,7 @@
 import React from "react";
 import TableBody from "./TableBody";
 
-const Table = () => {
+const Table = (props) => {
   return (
     <div className="container-fluid">
       <table class="table table-striped">
@@ -13,7 +13,7 @@ const Table = () => {
             <th scope="col">Handle</th>
           </tr>
         </thead>
-        <TableBody />
+        <TableBody employees={props.employees} />
       </table>
     </div>
   );

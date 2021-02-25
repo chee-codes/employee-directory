@@ -1,10 +1,12 @@
 import React from "react";
 import TableRow from "./TableRow";
 
-const TableBody = () => {
+const TableBody = (props) => {
   return (
     <tbody>
-      <TableRow />
+      {props.employees.map((employee) => (
+        <TableRow employee={employee} />
+      ))}
     </tbody>
   );
 };
