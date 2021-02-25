@@ -1,9 +1,14 @@
 import React from "react";
+import Nav from "./components/Nav";
+import Form from "./components/Form";
+import Table from "./components/Table";
 
 function App() {
   return (
-    <div className="App">
-      <h1>HELLO</h1>
+    <div>
+      <Nav />
+      <Form />
+      <Table />
     </div>
   );
 }
