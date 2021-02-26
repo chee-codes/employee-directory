@@ -6,11 +6,11 @@ const Form = (props) => {
       <form>
         <div className="form-group">
           <input
+            onChange={props.handleInputChange}
             type="text"
             className="form-control"
             placeholder="Search"
             value={props.search}
-            onChange={props.handleInputChange}
           />
         </div>
       </form>

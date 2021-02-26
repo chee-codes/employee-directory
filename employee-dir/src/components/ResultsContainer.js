@@ -17,7 +17,7 @@ class ResultsContainer extends Component {
       .then((res) => {
         //! console.log(res.data);
         this.setState({ employees: res.data.results });
-        this.setState({ result: res.data.employees });
+        this.setState({ result: this.state.employees });
       })
       .catch((err) => console.log(err));
   }
@@ -38,7 +38,7 @@ class ResultsContainer extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const sorted = this.state.result.sort((a, b) => {
+    let sorted = this.state.result.sort((a, b) => {
       if (this.state.direction === "ascending") {
         this.setState({ direction: "descending" });
         return a.name.first < b.name.first ? 1 : -1;
@@ -59,7 +59,7 @@ class ResultsContainer extends Component {
           handleInputChange={this.handleInputChange}
         />
         <Table
-          employees={this.state.employees}
+          employees={this.state.result}
           handleFormSubmit={this.handleFormSubmit}
         />
       </>
