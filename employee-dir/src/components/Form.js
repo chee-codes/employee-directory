@@ -1,14 +1,15 @@
 import React from "react";
+import style from "./style.css";
 
 const Form = (props) => {
   return (
     <div className="container">
-      <form>
+      <form className="">
         <div className="form-group">
           <input
             onChange={props.handleInputChange}
             type="text"
-            className="form-control"
+            className="form-control mx-auto"
             placeholder="Search"
           />
         </div>

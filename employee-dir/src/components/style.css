@@ -1,0 +1,17 @@
+.navbar {
+  background: navy;
+  color: white;
+  height: 150px;
+  margin-bottom: 20px;
+  border-bottom: 7px solid rgb(160, 3, 3);
+  text-align: center;
+}
+
+.navbar span {
+  font-size: 36px;
+  text-align: center;
+}
+
+.form-group input {
+  width: 350px;
+}

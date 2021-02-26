@@ -1,10 +1,11 @@
 import React from "react";
+import style from "./style.css";
 
 const Nav = () => {
   return (
     <div>
-      <nav className="navbar navbar-light bg-light">
-        <span className="navbar-brand mb-0 h1">Some Heading Text</span>
+      <nav className="navbar">
+        <span className="navbar-brand mb-0 mx-auto ">Employee Directory</span>
       </nav>
     </div>
   );
