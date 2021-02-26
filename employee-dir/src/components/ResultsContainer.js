@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import Nav from "./Nav";
 import Form from "./Form";
 import Table from "./Table";
 import API from "../utils/API";
 
 class ResultsContainer extends Component {
   state = {
+    search: "",
     result: [],
     employees: [],
     direction: "ascending",
@@ -13,9 +15,9 @@ class ResultsContainer extends Component {
   componentDidMount() {
     API.search()
       .then((res) => {
-        console.log(res.data);
+        //! console.log(res.data);
         this.setState({ employees: res.data.results });
-        this.setState({ result: res.data.results });
+        this.setState({ result: res.data.employees });
       })
       .catch((err) => console.log(err));
   }
@@ -25,7 +27,7 @@ class ResultsContainer extends Component {
     const value = e.target.value;
     const filtered = this.state.employees.filter(
       (employee) =>
-        employee.name.first.toLowerCase().indexOf(value.toLowerCase()) == 0
+        employee.name.first.toLowerCase().indexOf(value.toLowerCase()) === 0
     );
     this.setState({
       [name]: value,
@@ -36,7 +38,7 @@ class ResultsContainer extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const sorted = this.state.results.sort((a, b) => {
+    const sorted = this.state.result.sort((a, b) => {
       if (this.state.direction === "ascending") {
         this.setState({ direction: "descending" });
         return a.name.first < b.name.first ? 1 : -1;
@@ -51,8 +53,15 @@ class ResultsContainer extends Component {
   render() {
     return (
       <>
-        <Form />
-        <Table employees={this.state.employees} />
+        <Nav />
+        <Form
+          search={this.state.search}
+          handleInputChange={this.handleInputChange}
+        />
+        <Table
+          employees={this.state.employees}
+          handleFormSubmit={this.handleFormSubmit}
+        />
       </>
     );
   }

@@ -2,15 +2,19 @@ import React from "react";
 import TableBody from "./TableBody";
 
 const Table = (props) => {
+  console.log(props);
   return (
     <div className="container-fluid">
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Image</th>
+            <th scope="col" onClick={props.handleFormSubmit}>
+              Name
+            </th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Blank</th>
           </tr>
         </thead>
         <TableBody employees={props.employees} />
