@@ -39,11 +39,11 @@ class ResultsContainer extends Component {
     e.preventDefault();
 
     let sorted = this.state.result.sort((a, b) => {
-      if (this.state.order === "ascending") {
-        this.setState({ order: "descending" });
-        return a.name.first < b.name.first ? 1 : -1;
-      } else if (this.state.order === "descending") {
+      if (this.state.order === "descending") {
         this.setState({ order: "ascending" });
+        return a.name.first < b.name.first ? 1 : -1;
+      } else if (this.state.order === "ascending") {
+        this.setState({ order: "descending" });
         return a.name.first > b.name.first ? 1 : -1;
       }
     });
