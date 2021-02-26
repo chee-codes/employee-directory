@@ -9,7 +9,7 @@ class ResultsContainer extends Component {
     search: "",
     result: [],
     employees: [],
-    direction: "ascending",
+    order: "ascending",
   };
 
   componentDidMount() {
@@ -39,11 +39,11 @@ class ResultsContainer extends Component {
     e.preventDefault();
 
     let sorted = this.state.result.sort((a, b) => {
-      if (this.state.direction === "ascending") {
-        this.setState({ direction: "descending" });
+      if (this.state.order === "ascending") {
+        this.setState({ order: "descending" });
         return a.name.first < b.name.first ? 1 : -1;
-      } else if (this.state.direction === "descending") {
-        this.setState({ direction: "ascending" });
+      } else if (this.state.order === "descending") {
+        this.setState({ order: "ascending" });
         return a.name.first > b.name.first ? 1 : -1;
       }
     });

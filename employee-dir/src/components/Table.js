@@ -8,7 +8,11 @@ const Table = (props) => {
         <thead>
           <tr>
             <th scope="col">Image</th>
-            <th scope="col" onClick={props.handleFormSubmit}>
+            <th
+              className="name-click"
+              scope="col"
+              onClick={props.handleFormSubmit}
+            >
               Name
             </th>
             <th scope="col">Phone</th>
