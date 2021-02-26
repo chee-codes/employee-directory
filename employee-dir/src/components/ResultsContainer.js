@@ -15,7 +15,7 @@ class ResultsContainer extends Component {
   componentDidMount() {
     API.search()
       .then((res) => {
-        //! console.log(res.data);
+        //* console.log(res.data);
         this.setState({ employees: res.data.results });
         this.setState({ result: this.state.employees });
       })
